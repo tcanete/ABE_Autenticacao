@@ -54,7 +54,7 @@ namespace AutenticacaoApi.Controllers {
                 .FirstOrDefault ();
 
             if (databaseUser != null) {
-                databaseUser.Token = new Guid().ToString();
+                databaseUser.Token = Guid.NewGuid().ToString();
                 Startup.loggedUsers.Add (databaseUser);
 
                 return databaseUser;
